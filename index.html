@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#d1a080">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>For My Beloved</title>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -33,6 +36,8 @@
             overflow-x: hidden;
             position: relative;
             cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d1a080'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 12 12, auto;
+            -webkit-overflow-scrolling: touch;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Decorative Elements */
@@ -994,36 +999,98 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+            
+            .photo-container {
+                width: 320px;
+                height: 240px;
+            }
+            
+            .timer-container {
+                gap: 15px;
+            }
+            
+            .timer-item {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .timer-value {
+                font-size: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
             h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
+                line-height: 1.2;
             }
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
             }
 
             .card {
-                padding: 25px;
+                padding: 25px 20px;
+                margin-bottom: 30px;
             }
 
             .letter-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                line-height: 1.6;
             }
 
+            /* Photo Carousel Mobile Optimization */
+            .photo-carousel {
+                gap: 15px;
+                padding: 10px 0;
+            }
+
+            .photo-container {
+                width: 280px;
+                height: 200px;
+                flex-shrink: 0;
+            }
+
+            .photo-caption {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+
+            /* Timer Mobile Optimization */
             .timer-container {
                 flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
             }
 
             .timer-item {
                 width: 70px;
                 height: 70px;
+                margin: 5px;
             }
 
             .timer-value {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
+            .timer-label {
+                font-size: 0.8rem;
+            }
+
+            /* Timeline Mobile Optimization */
             .timeline::before {
                 left: 20px;
             }
@@ -1034,6 +1101,7 @@
                 text-align: left !important;
                 padding-left: 50px !important;
                 padding-right: 0 !important;
+                margin-bottom: 30px;
             }
 
             .timeline-item::before {
@@ -1041,30 +1109,378 @@
                 right: auto !important;
             }
 
+            .timeline-content {
+                padding: 15px;
+            }
+
+            .timeline-date {
+                font-size: 0.9rem;
+            }
+
+            .timeline-title {
+                font-size: 1.1rem;
+            }
+
+            .timeline-description {
+                font-size: 0.9rem;
+            }
+
+            /* Music Player Mobile Optimization */
             .music-player {
                 top: 10px;
                 right: 10px;
-                padding: 10px 15px;
+                padding: 8px 12px;
+                border-radius: 20px;
             }
 
             .music-info {
-                max-width: 100px;
-                font-size: 0.8rem;
+                max-width: 80px;
+                font-size: 0.7rem;
+                display: none;
+            }
+
+            .music-controls {
+                gap: 8px;
+            }
+
+            .music-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            /* Form Mobile Optimization */
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-input, .form-textarea {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+
+            .form-submit {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            /* Message Board Mobile Optimization */
+            .message-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .message-input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .message-submit {
+                width: 100%;
+                padding: 12px;
+            }
+
+            .message-list {
+                max-height: 250px;
+            }
+
+            /* Quiz Mobile Optimization */
+            .quiz-options {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .quiz-option {
+                padding: 15px;
+                font-size: 1rem;
+            }
+
+            /* Open When Buttons Mobile */
+            .open-when-buttons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .open-when-btn {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+
+            /* Modal Mobile Optimization */
+            .open-when-content {
+                width: 90%;
+                max-width: 400px;
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            .modal-close {
+                font-size: 1.5rem;
+                top: 10px;
+                right: 15px;
             }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 30px 20px;
+                padding: 20px 15px;
             }
 
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                padding: 20px 15px;
+                margin-bottom: 25px;
             }
 
             .photo-container {
-                width: 280px;
-                height: 200px;
+                width: 250px;
+                height: 180px;
+            }
+
+            .photo-caption {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .timer-item {
+                width: 60px;
+                height: 60px;
+            }
+
+            .timer-value {
+                font-size: 1.4rem;
+            }
+
+            .timer-label {
+                font-size: 0.7rem;
+            }
+
+            .letter-text {
+                font-size: 0.95rem;
+            }
+
+            .music-player {
+                top: 5px;
+                right: 5px;
+                padding: 6px 10px;
+            }
+
+            .music-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+
+            .form-input, .form-textarea {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .form-submit {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+
+            .message-input {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .message-submit {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+
+            .quiz-option {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+
+            .open-when-btn {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 15px 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .card {
+                padding: 15px 10px;
+            }
+
+            .photo-container {
+                width: 220px;
+                height: 160px;
+            }
+
+            .timer-item {
+                width: 50px;
+                height: 50px;
+            }
+
+            .timer-value {
+                font-size: 1.2rem;
+            }
+
+            .letter-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Landscape Mobile Optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .container {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .card {
+                padding: 15px 20px;
+                margin-bottom: 20px;
+            }
+
+            .photo-carousel {
+                gap: 10px;
+            }
+
+            .photo-container {
+                width: 200px;
+                height: 140px;
+            }
+
+            .timer-container {
+                gap: 8px;
+            }
+
+            .timer-item {
+                width: 50px;
+                height: 50px;
+            }
+
+            .timer-value {
+                font-size: 1.2rem;
+            }
+
+            .music-player {
+                top: 5px;
+                right: 5px;
+                padding: 5px 8px;
+            }
+
+            .music-btn {
+                width: 25px;
+                height: 25px;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .music-btn:hover,
+            .form-submit:hover,
+            .message-submit:hover,
+            .quiz-option:hover,
+            .open-when-btn:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .music-btn:active,
+            .form-submit:active,
+            .message-submit:active,
+            .quiz-option:active,
+            .open-when-btn:active {
+                transform: scale(0.95);
+            }
+
+            .photo-container {
+                cursor: pointer;
+            }
+
+            .photo-container:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* High DPI Display Optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .photo {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Mobile Scroll Optimization */
+        .photo-carousel {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .message-list {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        /* Prevent text selection on interactive elements */
+        .music-btn,
+        .form-submit,
+        .message-submit,
+        .quiz-option,
+        .open-when-btn {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Mobile-specific animations */
+        @media (max-width: 768px) {
+            .card {
+                transition: transform 0.2s ease;
+            }
+            
+            .card:hover {
+                transform: none;
+            }
+            
+            .card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Safe area for notched devices */
+        @supports (padding: max(0px)) {
+            .container {
+                padding-left: max(30px, env(safe-area-inset-left));
+                padding-right: max(30px, env(safe-area-inset-right));
+            }
+            
+            .music-player {
+                top: max(20px, env(safe-area-inset-top));
+                right: max(20px, env(safe-area-inset-right));
             }
         }
     </style>
